@@ -1,0 +1,408 @@
+/* ----------------------------------- */
+/* General Reset and Basic Styling     */
+/* ----------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body: Soft cream background to evoke a warm sunset glow */
+body {
+  font-family: Arial, sans-serif;
+  color: #333; /* Base text color */
+  background-color: #fdf3ec; /* Light cream background */
+  line-height: 1.4;
+}
+
+/* ----------------------------------- */
+/* Header                              */
+/* ----------------------------------- */
+header {
+  background-color: #d87f5f; /* Sunset-inspired orange */
+  border-bottom: 2px solid #b86344;
+  padding: 1rem;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-content h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.contact-info {
+  font-size: 1rem;
+  color: #ffeadd;
+}
+
+.contact-info a {
+  color: #ffeadd;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------------- */
+/* Banner                              */
+/* ----------------------------------- */
+#banner {
+  /* Bottom half of the image displayed, no transparency */
+  background: url('images/banner2.jpg') no-repeat center center;
+  background-size: cover;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-text {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.banner-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #b84f32; /* A darker orange-brown accent */
+}
+
+.banner-text p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* ----------------------------------- */
+/* Map Section                         */
+/* ----------------------------------- */
+#map {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+#map h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #b84f32;
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.map-container iframe {
+  border: 0;
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+}
+
+/* ----------------------------------- */
+/* Photo Carousel with Side Arrows     */
+/* ----------------------------------- */
+#photo-carousel {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+#photo-carousel h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #b84f32;
+}
+
+/* Hide radio inputs */
+.carousel input {
+  display: none;
+}
+
+/* Slides container */
+.slides {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Adjust as needed */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Each .slide is absolutely positioned, only the "active" one is displayed */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* Hidden by default */
+  text-align: center;
+}
+
+/* Images fill the .slide container; adjust if needed */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Show the 'active' slide if its corresponding radio is checked */
+#slide1:checked ~ .slides #s1,
+#slide2:checked ~ .slides #s2,
+#slide3:checked ~ .slides #s3,
+#slide4:checked ~ .slides #s4,
+#slide5:checked ~ .slides #s5,
+#slide6:checked ~ .slides #s6,
+#slide7:checked ~ .slides #s7,
+#slide8:checked ~ .slides #s8 {
+  display: block;
+}
+
+/* Navigation arrows */
+.navigation {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Arrow styling */
+.navigation label {
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 2rem;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  user-select: none;
+}
+
+.navigation label:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.prev {
+  margin-left: 10px;
+}
+
+.next {
+  margin-right: 10px;
+}
+
+/* ----------------------------------- */
+/* Review Section                      */
+/* ----------------------------------- */
+#reviews {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+#reviews h3 {
+  color: #b84f32;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+#reviews a {
+  color: #b84f32;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#reviews a:hover
+
+
+  /* ----------------------------------- */
+  /* Footer Section                      */
+  /* ----------------------------------- */
+footer {
+  width: 960px; /* set a desired fixed width */
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column; /* if you want stacked elements */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #d87f5f;
+  color: #b84f32;
+  padding: 1.5rem 1rem;
+  margin-top: 2rem;
+}
+
+.footer-links {
+  /*max-width: 960px;*/
+  width: 100%;
+  text-align: center;
+}
+
+/*.footer-links {*/
+/*  margin-bottom: 0.5rem;*/
+/*}*/
+
+.footer-links a {
+  color: #b84f32;                    /* High contrast white links */
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 600;
+}
+
+
+/* Clearfix for any potential container issues */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* ----------------------------------- */
+/* About Us Section                      */
+/* ----------------------------------- */
+
+/* About Us Section */
+#about-us {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+#about-us h3 {
+  color: #b84f32;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+#about-us p {
+  margin-bottom: 1.5rem;
+}
+
+#about-us ul {
+  list-style-type: none;
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+#about-us li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+#about-us li::before {
+  content: "•";
+  color: #b84f32;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+
+/* ----------------------------------- */
+/* Lodging Section                      */
+/* ----------------------------------- */
+
+/* Lodging Section */
+#lodging {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+#lodging h3 {
+  color: #b84f32;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+#lodging p {
+  margin-bottom: 1.5rem;
+}
+
+#lodging ul {
+  list-style-type: none;
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+#lodging li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+#lodging li::before {
+  content: "•";
+  color: #b84f32;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* ----------------------------------- */
+/* Rates Table Section                      */
+/* ----------------------------------- */
+.rates-table {
+  /*width: 100%;*/
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.rates-table th, .rates-table td {
+  border: 1px solid #b84f32;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.rates-table th {
+  background-color: #d87f5f;
+  color: white;
+}
+
+.rates-table tr:nth-child(even) {
+  background-color: #fdf3ec;
+}
+
+
+/* ----------------------------------- */
+/* Navigation Section                      */
+/* ----------------------------------- */
+.main-nav {
+  /*background-color: #d87f5f;*/
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.nav-links {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.nav-links a {
+  color: #b84f32;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
