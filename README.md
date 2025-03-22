@@ -1,7 +1,5 @@
 # Cast & Stay Website
 
-A scenic waterfront resort offering comfortable lodging, fishing trips, and event spaces.
-
 ## Structure
 
 - **index.html**: Home page with introduction and call to action
