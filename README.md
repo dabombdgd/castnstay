@@ -11,9 +11,3 @@
 
 - **HTML5**: For structuring content
 - **CSS3**: For styling and layout
-- **JavaScript**: For dynamic elements (optional)
-
-## Setup
-
-1. Clone the repository to your local machine.
-2. Open the `index.html` file in a web browser to view the website.
