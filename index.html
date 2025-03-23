@@ -74,170 +74,12 @@
       "description": "Cast & Stay is a waterfront lodge on Baffin Bay in Riviera, TX. We offer comfortable lodging, fishing trips, and events at our scenic waterfront dock. Famous for State Record Speckled Trout fishing."
     }
     </script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-body, html {
-  height: 100%;
-  color: #777;
-  line-height: 1.8;
-}
-
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* First image (Logo. Full height) */
-.bgimg-1 {
-  background-image: url('images/parallax1.jpg');
-  min-height: 100%;
-}
-
-/* Second image (Photo) */
-.bgimg-2 {
-  background-image: url("images/parallax2.jpg");
-  min-height: 400px;
-}
-
-/* Third image (Contact) */
-.bgimg-3 {
-  background-image: url("images/parallax3.jpg");
-  min-height: 400px;
-}
-
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-    min-height: 400px;
-  }
-}
-
-/* Carousel Styles */
-.carousel-container {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.carousel-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.carousel-track {
-  overflow: hidden;
-  width: 100%;
-}
-
-.carousel-items {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  gap: 20px;
-}
-
-.carousel-item {
-  flex: 0 0 calc(25% - 15px);
-  min-width: 0;
-}
-
-.carousel-item img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.carousel-item img:hover {
-  transform: scale(1.05);
-}
-
-.carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s ease;
-}
-
-.carousel-button:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.carousel-button.prev {
-  left: 10px;
-}
-
-.carousel-button.next {
-  right: 10px;
-}
-
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 20px;
-}
-
-.carousel-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #ddd;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.carousel-dot.active {
-  background: #000;
-}
-
-@media (max-width: 768px) {
-  .carousel-item {
-    flex: 0 0 calc(50% - 10px);
-  }
-  
-  .carousel-item img {
-    height: 250px;
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel-item {
-    flex: 0 0 100%;
-  }
-  
-  .carousel-item img {
-    height: 200px;
-  }
-}
-</style>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
 <body>
 
 <!-- Navbar (sit on top) -->
@@ -265,7 +107,7 @@ body, html {
 </div>
 
 <!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+<div class="bgimg-1 w3-display-container" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
     <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">CAST & STAY</span>
   </div>
@@ -363,7 +205,7 @@ body, html {
 </div>
 
 <!-- Second Parallax Image with Photos Text -->
-<div class="bgimg-2 w3-display-container w3-opacity-min">
+<div class="bgimg-2 w3-display-container">
   <div class="w3-display-middle">
     <span class="w3-xxlarge w3-text-white w3-wide">PHOTOS</span>
   </div>
@@ -409,10 +251,10 @@ body, html {
   </div>
 </div>
 
-<!-- Third Parallax Image with Photos Text -->
-<div class="bgimg-3 w3-display-container w3-opacity-min">
+<!-- Third Parallax Image with Contact Text -->
+<div class="bgimg-3 w3-display-container">
   <div class="w3-display-middle">
-     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+    <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
   </div>
 </div>
 
@@ -465,196 +307,7 @@ body, html {
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 </footer>
  
-<script>
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-
-// Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-    } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-    }
-}
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-
-// Carousel data structure
-const carouselData = [
-  {
-    src: 'images/lodge1-exterior.jpg',
-    alt: 'Exterior view of Lodge 1 at Cast & Stay on Baffin Bay'
-  },
-  {
-    src: 'images/lodge1-interior.jpg',
-    alt: 'Interior view of Lodge 1 at Cast & Stay showing comfortable living space'
-  },
-  {
-    src: 'images/lodge2-exterior.jpg',
-    alt: 'Exterior view of Lodge 2 at Cast & Stay overlooking Baffin Bay'
-  },
-  {
-    src: 'images/lodge2-interior.jpg',
-    alt: 'Interior view of Lodge 2 at Cast & Stay featuring modern amenities'
-  },
-  {
-    src: 'images/lodge3-exterior.jpg',
-    alt: 'Exterior view of Lodge 3 at Cast & Stay with waterfront access'
-  },
-  {
-    src: 'images/lodge3-interior.jpg',
-    alt: 'Interior view of Lodge 3 at Cast & Stay showing comfortable accommodations'
-  },
-  {
-    src: 'images/past-customers.jpg',
-    alt: 'Happy guests enjoying their stay at Cast & Stay on Baffin Bay'
-  },
-  {
-    src: 'images/event.jpg',
-    alt: 'Special event venue at Cast & Stay overlooking Baffin Bay'
-  }
-];
-
-let currentIndex = 0;
-let itemsPerView = 4;
-let carouselItems = document.getElementById('carousel-items');
-let dotsContainer = document.querySelector('.carousel-dots');
-
-// Initialize carousel
-function initCarousel() {
-  // Create carousel items
-  carouselData.forEach((item, index) => {
-    const div = document.createElement('div');
-    div.className = 'carousel-item';
-    div.innerHTML = `<img src="${item.src}" alt="${item.alt}" onclick="onClick(this)">`;
-    carouselItems.appendChild(div);
-
-    // Create dots
-    const dot = document.createElement('div');
-    dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
-    dot.onclick = () => goToSlide(index);
-    dotsContainer.appendChild(dot);
-  });
-
-  updateCarousel();
-}
-
-// Update carousel position
-function updateCarousel() {
-  const offset = -currentIndex * (100 / itemsPerView);
-  carouselItems.style.transform = `translateX(${offset}%)`;
-  
-  // Update dots
-  document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
-    dot.classList.toggle('active', index === currentIndex);
-  });
-}
-
-// Move carousel
-function moveCarousel(direction) {
-  const maxIndex = carouselData.length - itemsPerView;
-  currentIndex = Math.max(0, Math.min(currentIndex + direction, maxIndex));
-  updateCarousel();
-}
-
-// Go to specific slide
-function goToSlide(index) {
-  currentIndex = index;
-  updateCarousel();
-}
-
-// Handle window resize
-function handleResize() {
-  if (window.innerWidth <= 480) {
-    itemsPerView = 1;
-  } else if (window.innerWidth <= 768) {
-    itemsPerView = 2;
-  } else {
-    itemsPerView = 4;
-  }
-  updateCarousel();
-}
-
-// Initialize carousel when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  initCarousel();
-  window.addEventListener('resize', handleResize);
-});
-
-// Update loadMorePhotos function to work with new carousel
-function loadMorePhotos() {
-  // Add new images to carouselData array
-  const newImages = [
-    'images/fishing1.jpg',
-    'images/fishing2.jpg',
-    'images/fishing3.jpg',
-    'images/fishing4.jpg',
-    'images/fishing5.jpg',
-    'images/fishing6.jpg',
-    'images/fishing7.jpg',
-    'images/fishing8.jpg',
-    'images/fishing9.jpg',
-    'images/fishing10.jpg',
-    'images/fishing11.jpg',
-    'images/fishing12.jpg'
-  ];
-
-  newImages.forEach(src => {
-    carouselData.push({
-      src: src,
-      alt: `Fishing at Cast & Stay on Baffin Bay - ${src.split('/').pop().replace(/\.[^/.]+$/, '')}`
-    });
-  });
-
-  // Reinitialize carousel with new data
-  carouselItems.innerHTML = '';
-  dotsContainer.innerHTML = '';
-  initCarousel();
-  
-  // Hide load more button
-  document.querySelector('.w3-button.w3-padding-large.w3-light-grey').style.display = 'none';
-}
-
-// Function to handle email form submission
-function send_email(event) {
-    event.preventDefault();
-    
-    // Get form values
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var message = document.getElementById('message').value;
-    
-    // Create mailto link with subject and body
-    var mailtoLink = "mailto:castnstay@yahoo.com?subject=Contact Form: " + encodeURIComponent(name) + 
-                     "&body=" + encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message);
-    
-    // Open default email client
-    window.location.href = mailtoLink;
-    
-    // Clear form
-    document.getElementById('name').value = '';
-    document.getElementById('email').value = '';
-    document.getElementById('message').value = '';
-    
-    return false;
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
