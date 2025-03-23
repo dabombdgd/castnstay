@@ -122,6 +122,120 @@ body, html {
     min-height: 400px;
   }
 }
+
+/* Carousel Styles */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-track {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-items {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 20px;
+}
+
+.carousel-item {
+  flex: 0 0 calc(25% - 15px);
+  min-width: 0;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item img:hover {
+  transform: scale(1.05);
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.carousel-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: #000;
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    flex: 0 0 calc(50% - 10px);
+  }
+  
+  .carousel-item img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-item {
+    flex: 0 0 100%;
+  }
+  
+  .carousel-item img {
+    height: 200px;
+  }
+}
 </style>
 </head>
 <body>
@@ -153,7 +267,7 @@ body, html {
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">Cast <span class="w3-hide-small">&</span> Stay on Baffin Bay</span>
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">CAST & STAY</span>
   </div>
 </div>
 
@@ -260,43 +374,30 @@ body, html {
   <h2 class="w3-center">Image Library</h2>
   <p class="w3-center"><em>Click on the images to make them bigger</em></p><br>
 
-  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="w3-row-padding w3-center">
-    <div class="w3-col m3">
-      <img src="images/lodge1-exterior.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Exterior view of Lodge 1 at Cast & Stay on Baffin Bay">
-    </div>
+  <!-- Modern Carousel -->
+  <div class="carousel-container">
+    <div class="carousel-wrapper">
+      <button class="carousel-button prev" onclick="moveCarousel(-1)" aria-label="Previous image">
+        <i class="fa fa-chevron-left"></i>
+      </button>
+      
+      <div class="carousel-track">
+        <div id="carousel-items" class="carousel-items">
+          <!-- Images will be inserted here by JavaScript -->
+        </div>
+      </div>
 
-    <div class="w3-col m3">
-      <img src="images/lodge1-interior.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Interior view of Lodge 1 at Cast & Stay showing comfortable living space">
+      <button class="carousel-button next" onclick="moveCarousel(1)" aria-label="Next image">
+        <i class="fa fa-chevron-right"></i>
+      </button>
     </div>
-
-    <div class="w3-col m3">
-      <img src="images/lodge2-exterior.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Exterior view of Lodge 2 at Cast & Stay overlooking Baffin Bay">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="images/lodge2-interior.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Interior view of Lodge 2 at Cast & Stay featuring modern amenities">
+    
+    <div class="carousel-dots">
+      <!-- Dots will be inserted here by JavaScript -->
     </div>
   </div>
 
-  <div class="w3-row-padding w3-center w3-section">
-    <div class="w3-col m3">
-      <img src="images/lodge3-exterior.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Exterior view of Lodge 3 at Cast & Stay with waterfront access">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="images/lodge3-interior.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Interior view of Lodge 3 at Cast & Stay showing comfortable accommodations">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="images/past-customers.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Happy guests enjoying their stay at Cast & Stay on Baffin Bay">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="images/event.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Special event venue at Cast & Stay overlooking Baffin Bay">
-    </div>
-    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px" onclick="loadMorePhotos()">LOAD MORE</button> 
-  </div>
+  <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px" onclick="loadMorePhotos()">LOAD MORE</button>
 </div>
 
 <!-- Modal for full size images on click-->
@@ -394,68 +495,140 @@ function toggleFunction() {
     }
 }
 
-// Global variable to track how many images we've loaded
-var loadedImageCount = 0;
+// Carousel data structure
+const carouselData = [
+  {
+    src: 'images/lodge1-exterior.jpg',
+    alt: 'Exterior view of Lodge 1 at Cast & Stay on Baffin Bay'
+  },
+  {
+    src: 'images/lodge1-interior.jpg',
+    alt: 'Interior view of Lodge 1 at Cast & Stay showing comfortable living space'
+  },
+  {
+    src: 'images/lodge2-exterior.jpg',
+    alt: 'Exterior view of Lodge 2 at Cast & Stay overlooking Baffin Bay'
+  },
+  {
+    src: 'images/lodge2-interior.jpg',
+    alt: 'Interior view of Lodge 2 at Cast & Stay featuring modern amenities'
+  },
+  {
+    src: 'images/lodge3-exterior.jpg',
+    alt: 'Exterior view of Lodge 3 at Cast & Stay with waterfront access'
+  },
+  {
+    src: 'images/lodge3-interior.jpg',
+    alt: 'Interior view of Lodge 3 at Cast & Stay showing comfortable accommodations'
+  },
+  {
+    src: 'images/past-customers.jpg',
+    alt: 'Happy guests enjoying their stay at Cast & Stay on Baffin Bay'
+  },
+  {
+    src: 'images/event.jpg',
+    alt: 'Special event venue at Cast & Stay overlooking Baffin Bay'
+  }
+];
 
-// Function to load more photos
+let currentIndex = 0;
+let itemsPerView = 4;
+let carouselItems = document.getElementById('carousel-items');
+let dotsContainer = document.querySelector('.carousel-dots');
+
+// Initialize carousel
+function initCarousel() {
+  // Create carousel items
+  carouselData.forEach((item, index) => {
+    const div = document.createElement('div');
+    div.className = 'carousel-item';
+    div.innerHTML = `<img src="${item.src}" alt="${item.alt}" onclick="onClick(this)">`;
+    carouselItems.appendChild(div);
+
+    // Create dots
+    const dot = document.createElement('div');
+    dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
+    dot.onclick = () => goToSlide(index);
+    dotsContainer.appendChild(dot);
+  });
+
+  updateCarousel();
+}
+
+// Update carousel position
+function updateCarousel() {
+  const offset = -currentIndex * (100 / itemsPerView);
+  carouselItems.style.transform = `translateX(${offset}%)`;
+  
+  // Update dots
+  document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentIndex);
+  });
+}
+
+// Move carousel
+function moveCarousel(direction) {
+  const maxIndex = carouselData.length - itemsPerView;
+  currentIndex = Math.max(0, Math.min(currentIndex + direction, maxIndex));
+  updateCarousel();
+}
+
+// Go to specific slide
+function goToSlide(index) {
+  currentIndex = index;
+  updateCarousel();
+}
+
+// Handle window resize
+function handleResize() {
+  if (window.innerWidth <= 480) {
+    itemsPerView = 1;
+  } else if (window.innerWidth <= 768) {
+    itemsPerView = 2;
+  } else {
+    itemsPerView = 4;
+  }
+  updateCarousel();
+}
+
+// Initialize carousel when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  initCarousel();
+  window.addEventListener('resize', handleResize);
+});
+
+// Update loadMorePhotos function to work with new carousel
 function loadMorePhotos() {
-    // Create a new row for additional photos
-    var newRow = document.createElement('div');
-    newRow.className = 'w3-row-padding w3-center w3-section';
-    
-    // List of all available images (update this list when adding new images)
-    var allImages = [
-        'images/fishing1.jpg',
-        'images/fishing2.jpg',
-        'images/fishing3.jpg',
-        'images/fishing4.jpg',
-        'images/fishing5.jpg',
-        'images/fishing6.jpg',
-        'images/fishing7.jpg',
-        'images/fishing8.jpg',
-        'images/fishing9.jpg',
-        'images/fishing10.jpg',
-        'images/fishing11.jpg',
-        'images/fishing12.jpg'
-    ];
-    
-    // Get the next 4 images starting from where we left off
-    var additionalPhotos = allImages.slice(loadedImageCount, loadedImageCount + 4);
-    
-    if (additionalPhotos.length === 0) {
-        // No more images to load
-        var loadMoreButton = document.querySelector('.w3-button.w3-padding-large.w3-light-grey');
-        loadMoreButton.style.display = 'none';
-        return;
-    }
-    
-    // Create and append new photo elements
-    additionalPhotos.forEach(function(imagePath) {
-        var col = document.createElement('div');
-        col.className = 'w3-col m3';
-        
-        var img = document.createElement('img');
-        img.src = imagePath;
-        img.style.width = '100%';
-        img.onclick = function() { onClick(this); };
-        img.className = 'w3-hover-opacity';
-        img.alt = imagePath.split('/').pop().replace(/\.[^/.]+$/, ''); // Remove file extension for alt text
-        
-        col.appendChild(img);
-        newRow.appendChild(col);
+  // Add new images to carouselData array
+  const newImages = [
+    'images/fishing1.jpg',
+    'images/fishing2.jpg',
+    'images/fishing3.jpg',
+    'images/fishing4.jpg',
+    'images/fishing5.jpg',
+    'images/fishing6.jpg',
+    'images/fishing7.jpg',
+    'images/fishing8.jpg',
+    'images/fishing9.jpg',
+    'images/fishing10.jpg',
+    'images/fishing11.jpg',
+    'images/fishing12.jpg'
+  ];
+
+  newImages.forEach(src => {
+    carouselData.push({
+      src: src,
+      alt: `Fishing at Cast & Stay on Baffin Bay - ${src.split('/').pop().replace(/\.[^/.]+$/, '')}`
     });
-    
-    // Update the counter for next time
-    loadedImageCount += 4;
-    
-    // Insert the new row before the "LOAD MORE" button
-    var loadMoreButton = document.querySelector('.w3-button.w3-padding-large.w3-light-grey');
-    loadMoreButton.parentNode.insertBefore(newRow, loadMoreButton);
-    
-    // Hide the "LOAD MORE" button if we've reached the end of the images
-    if (loadedImageCount >= allImages.length) {
-        loadMoreButton.style.display = 'none';
-    }
+  });
+
+  // Reinitialize carousel with new data
+  carouselItems.innerHTML = '';
+  dotsContainer.innerHTML = '';
+  initCarousel();
+  
+  // Hide load more button
+  document.querySelector('.w3-button.w3-padding-large.w3-light-grey').style.display = 'none';
 }
 
 // Function to handle email form submission
